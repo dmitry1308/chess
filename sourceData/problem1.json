@@ -1,0 +1,110 @@
+{
+	"field": {
+		"size": {
+			"width": 8,
+			"height": 10
+		},
+		"obstacles": [
+			{
+				"type": "hole",
+				"coordinates": {
+					"x": 1,
+					"y": 2
+				}
+			}, {
+				"type": "hole",
+				"coordinates": {
+					"x": 6,
+					"y": 2
+				}
+			}, {
+				"type": "hole",
+				"coordinates": {
+					"x": 1,
+					"y": 3
+				}
+			}, {
+				"type": "hole",
+				"coordinates": {
+					"x": 3,
+					"y": 3
+				}
+			}, {
+				"type": "hole",
+				"coordinates": {
+					"x": 4,
+					"y": 3
+				}
+			}, {
+				"type": "hole",
+				"coordinates": {
+					"x": 0,
+					"y": 4
+				}
+			}, {
+				"type": "hole",
+				"coordinates": {
+					"x": 1,
+					"y": 4
+				}
+			}, {
+				"type": "hole",
+				"coordinates": {
+					"x": 4,
+					"y": 6
+				}
+			}, {
+				"type": "hole",
+				"coordinates": {
+					"x": 5,
+					"y": 6
+				}
+			}, {
+				"type": "hole",
+				"coordinates": {
+					"x": 6,
+					"y": 6
+				}
+			}, {
+				"type": "hole",
+				"coordinates": {
+					"x": 7,
+					"y": 6
+				}
+			}, {
+				"type": "hole",
+				"coordinates": {
+					"x": 2,
+					"y": 8
+				}
+			}, {
+				"type": "hole",
+				"coordinates": {
+					"x": 3,
+					"y": 8
+				}
+			}, {
+				"type": "hole",
+				"coordinates": {
+					"x": 4,
+					"y": 8
+				}
+			}
+		]
+	},
+	"start": {
+		"coordinates": {
+			"x": 0,
+			"y": 0
+		}
+	},
+	"finish": {
+		"coordinates": {
+			"x": 2,
+			"y": 9
+		}
+	},
+	"figure": {
+		"type": "POWN"
+	}
+}
