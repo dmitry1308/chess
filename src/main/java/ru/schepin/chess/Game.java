@@ -20,6 +20,8 @@ public class Game {
 
     private int steps = 0;
 
+    private GameState gameState;
+
     public Game(Parser parser) {
         field = parser.getField();
         startPoint = parser.getStartPoint();
@@ -38,17 +40,18 @@ public class Game {
             figure.makeStep();
             steps++;
             if (!checkInsideBorder()) {
-                System.out.println("Фигура не дойдет до финиша");
+                gameState = GameState.CanNotFinished;
                 break;
             } else if (hittingBarrier()) {
-                System.out.println("Фигура попадет на препятствие на шаге " + steps);
+                gameState = GameState.HitedBarrier;
                 break;
             } else if (isFinish()) {
-                System.out.println("Фигура Финиширует на шаге " + steps);
+                gameState = GameState.Finished;
                 break;
             }
-
         }
+
+        System.out.println(gameState.getResult() + " на шаге " + steps);
     }
 
     private Figure initFigure() {
