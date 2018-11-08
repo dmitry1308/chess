@@ -10,6 +10,8 @@ public class Solution {
     public static void main(String[] args) {
         if (args.length > 0) {
             new Solution().run(args[0]);
+        }     else {
+            System.out.println("Параметр не задан!");
         }
     }
 
