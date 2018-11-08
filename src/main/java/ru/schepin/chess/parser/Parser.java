@@ -4,10 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import ru.schepin.chess.objectFromJsonFile.Field;
-import ru.schepin.chess.objectFromJsonFile.FinishPoint;
-import ru.schepin.chess.barriers.Obstacle;
-import ru.schepin.chess.objectFromJsonFile.StartPoint;
+import ru.schepin.chess.models.Node;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -23,43 +20,37 @@ public class Parser {
         jsonObject = element.getAsJsonObject();
     }
 
-    public Field getField() {
+    public Node getField() {
         JsonObject objectOfField = jsonObject.getAsJsonObject("field").getAsJsonObject("size");
 
-        Field field = new Field();
+        Node field = new Node();
         int width = objectOfField.get("width").getAsInt();
-        field.setWidth(width);
+        field.setX(width);
         int height = objectOfField.get("height").getAsInt();
-        field.setHeight(height);
-
-        System.out.println("Field receipt check " + field);
+        field.setY(height);
         return field;
     }
 
 
-    public StartPoint getStartPoint() {
+    public Node getStartPoint() {
         JsonObject objectOfCoordinate = jsonObject.getAsJsonObject("start").getAsJsonObject("coordinates");
 
-        StartPoint startPoint = new StartPoint();
+        Node startPoint = new Node();
         int x = objectOfCoordinate.get("x").getAsInt();
         startPoint.setX(x);
         int y = objectOfCoordinate.get("y").getAsInt();
         startPoint.setY(y);
-
-        System.out.println("StartPoint receipt check " + startPoint);
         return startPoint;
     }
 
-    public FinishPoint getFinishPoint() {
+    public Node getFinishPoint() {
         JsonObject objectOfCoordinate = jsonObject.getAsJsonObject("finish").getAsJsonObject("coordinates");
 
-        FinishPoint finishPoint = new FinishPoint();
+        Node finishPoint = new Node();
         int x = objectOfCoordinate.get("x").getAsInt();
         finishPoint.setX(x);
         int y = objectOfCoordinate.get("y").getAsInt();
         finishPoint.setY(y);
-
-        System.out.println("FinishPoint receipt check " + finishPoint);
         return finishPoint;
     }
 
@@ -67,13 +58,11 @@ public class Parser {
         JsonObject objectOfCoordinate = jsonObject.getAsJsonObject("figure");
         JsonElement nameFigure = objectOfCoordinate.get("type");
         String name = nameFigure.toString().replace("\"", "");
-
-        System.out.println("Name Of Figure receipt check " + nameFigure.toString());
         return name;
     }
 
-    public List<Obstacle> getObstacles() {
-        ArrayList<Obstacle> listOfObstacles = new ArrayList<>();
+    public List<Node> getObstacles() {
+        ArrayList<Node> listOfObstacles = new ArrayList<>();
 
         JsonArray obstacles = jsonObject.getAsJsonObject("field").getAsJsonArray("obstacles");
         for (int i = 0; i < obstacles.size(); i++) {
@@ -81,7 +70,7 @@ public class Parser {
             JsonObject obstacleCoordinate = obstacleObject.getAsJsonObject("coordinates");
             int x = obstacleCoordinate.get("x").getAsInt();
             int y = obstacleCoordinate.get("y").getAsInt();
-            listOfObstacles.add(new Obstacle(x,y));
+            listOfObstacles.add(new Node(x,y));
         }
 
         return listOfObstacles;

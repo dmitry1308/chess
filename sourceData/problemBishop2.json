@@ -1,0 +1,39 @@
+{
+  "field": {
+    "size": {
+      "width": 8,
+      "height": 10
+    },
+    "obstacles": [
+      {
+        "type": "hole",
+        "coordinates": {
+          "x": 1,
+          "y": 2
+        }
+      },
+      {
+        "type": "hole",
+        "coordinates": {
+          "x": 6,
+          "y": 2
+        }
+      }
+    ]
+  },
+  "start": {
+    "coordinates": {
+      "x": 3,
+      "y": 3
+    }
+  },
+  "finish": {
+    "coordinates": {
+      "x": 3,
+      "y": 9
+    }
+  },
+  "figure": {
+    "type": "BISHOP"
+  }
+}

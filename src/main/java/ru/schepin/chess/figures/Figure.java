@@ -1,15 +1,9 @@
 package ru.schepin.chess.figures;
 
+import ru.schepin.chess.models.Node;
+
+import java.util.ArrayList;
+
 public interface Figure {
-    int getX();
-
-    int getY();
-
-    void setX(int x);
-
-    void setY(int y);
-
-    void makeStepOnCoordinate(int x, int y);
-
-    void makeStep();
+    ArrayList<Node> possibleSteps(Node node);
 }
