@@ -74,7 +74,7 @@
 			}, {
 				"type": "hole",
 				"coordinates": {
-					"x": 2,
+					"x": 5,
 					"y": 8
 				}
 			}, {
@@ -94,7 +94,7 @@
 	},
 	"start": {
 		"coordinates": {
-			"x": 0,
+			"x": 2,
 			"y": 0
 		}
 	},
@@ -105,6 +105,6 @@
 		}
 	},
 	"figure": {
-		"type": "POWN"
+		"type": "PAWN"
 	}
 }

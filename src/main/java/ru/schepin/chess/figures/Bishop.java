@@ -1,69 +1,23 @@
 package ru.schepin.chess.figures;
 
-import java.util.Objects;
+import ru.schepin.chess.models.Node;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Bishop implements Figure {
-    private int x;
-    private int y;
-
-    public Bishop(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    public Bishop() {
-    }
-
     @Override
-    public void makeStepOnCoordinate(int x, int y) {
-        System.out.println("Bishop пошел!!! Ура!!!");
-    }
+    public ArrayList<Node> possibleSteps(Node node) {
+        ArrayList<Node> possibleSteps = new ArrayList<>();
+        int x = node.getX();
+        int y = node.getY();
 
-    @Override
-    public void makeStep() {
+        Collections.addAll(possibleSteps,
+                new Node(x - 1, y + 1),
+                new Node(x + 1, y + 1),
+                new Node(x - 1, y - 1),
+                new Node(x - 1, y + 1));
 
-    }
-
-    @Override
-    public int getX() {
-        return x;
-    }
-
-    @Override
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    @Override
-    public int getY() {
-        return y;
-    }
-
-    @Override
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Bishop bishop = (Bishop) o;
-        return x == bishop.x &&
-                y == bishop.y;
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(x, y);
-    }
-
-    @Override
-    public String toString() {
-        return "Bishop{" +
-                "x=" + x +
-                ", y=" + y +
-                '}';
+        return possibleSteps;
     }
 }
