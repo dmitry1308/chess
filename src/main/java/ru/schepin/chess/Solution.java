@@ -11,7 +11,7 @@ public class Solution {
         if (args.length > 0) {
             new Solution().run(args[0]);
         }     else {
-            System.out.println("Параметр не задан!");
+            System.out.println("Parameter not set!");
         }
     }
 
@@ -22,7 +22,7 @@ public class Solution {
             Controller controller = new Controller(parser);
             controller.start();
         } catch (FileNotFoundException e) {
-            System.out.println("File not Found!");
+            System.out.println("File not found!");
         }
     }
 }

@@ -23,9 +23,9 @@ public class Printer {
         Collections.reverse(path);
         System.out.println("Координаты пути: ");
         for (int i = 0; i < path.size(); i++) {
-            System.out.println("{" + path.get(i).getX() + "; " + path.get(i).getY() + "}");
+            System.out.print("{" + path.get(i).getX() + ";" + path.get(i).getY() + "} ");
         }
-        System.out.println();
+        System.out.println("\n");
     }
 
     public void printResultDisplay(ArrayList<Node> path, Node field, List<Node> obstacles, Node startNode, Node finishNode) {
