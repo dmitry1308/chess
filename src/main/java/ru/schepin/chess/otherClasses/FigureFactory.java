@@ -1,4 +1,4 @@
-package ru.schepin.chess;
+package ru.schepin.chess.otherClasses;
 
 import ru.schepin.chess.figures.Figure;
 
